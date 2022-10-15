@@ -1,16 +1,16 @@
 import Input from '../Input/Input';
 import Button from '../Button/Button'
 
-function UserInput({ changeState }) {
+function UserInput({ setValue,state,changeState }) {
 
     let inputField = "";
 
-    const onInputChange = (e) => {
-        inputField = e.target.value
-    }
+    // const onInputChange = (e) => {
+    //     inputField = e.target.value
+    // }
 
     const addInputField = () => {
-        changeState(inputField);
+        changeState(state.value);
     }
 
     return (
@@ -18,7 +18,7 @@ function UserInput({ changeState }) {
             <div className="col col-11 mx-auto">
                 <div className="row bg-white rounded shadow-sm p-2 add-todo-wrapper align-items-center justify-content-center">
                     <div className="col">
-                        <Input change={onInputChange} inputPlaceholder="Add" inputType="text"></Input>
+                        <Input value={state.value} change={setValue} inputPlaceholder="Add" inputType="text"></Input>
                     </div>
                     <div className="col-auto m-0 px-2 d-flex align-items-center">
                         <label className="text-secondary my-2 p-0 px-1 view-opt-label due-date-label d-none">Due date not set</label>

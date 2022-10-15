@@ -51,3 +51,7 @@ body {
 .todo-item.editing .todo-actions .edit-icon {
   display: none !important;
 }
+
+.word-wrap{
+  word-wrap: break-word;
+}

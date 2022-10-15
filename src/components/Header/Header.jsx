@@ -1,7 +1,7 @@
 import React from 'react'
 import UserInput from '../UserInput/UserInput';
 
-function Header({ changeState }) {
+function Header({ setValue,state,changeState }) {
 
     return (
         <>
@@ -14,7 +14,7 @@ function Header({ changeState }) {
                 </div>
             </div>
 
-            <UserInput changeState={changeState}></UserInput>
+            <UserInput state={state} setValue={setValue} changeState={changeState}></UserInput>
         </>
     )
 }
