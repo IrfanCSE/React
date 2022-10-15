@@ -1,25 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
+import second from './components/Header/Header'
+import Header from './components/Header/Header';
+import React from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  state = [{value:Date.now,label:"Todo One!",mark:true}]
+  render() {
+    return (
+      <div className="container m-5 p-2 rounded mx-auto bg-light shadow">
+        <Header data={this.state}></Header>
+      </div>
+    );
+  };
 }
 
 export default App;
