@@ -1,15 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
-import second from './components/Header/Header'
 import Header from './components/Header/Header';
 import React from 'react';
 
 class App extends React.Component {
-  state = [{value:Date.now,label:"Todo One!",mark:true}]
+  state = { list: []};
+
+  onSetChanges = (value) => {
+    const {list} = this.state;
+    list.push({ value: Date.now, label: value, mark: false })
+    this.setState({ list:list })
+  }
+
   render() {
+    console.log("app render")
     return (
       <div className="container m-5 p-2 rounded mx-auto bg-light shadow">
-        <Header data={this.state}></Header>
+        <Header changeState={this.onSetChanges}></Header>
       </div>
     );
   };
